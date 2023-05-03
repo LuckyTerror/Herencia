@@ -1,0 +1,67 @@
+package com.pp2;
+
+public class Person {
+	protected int age;
+	protected String name;
+	
+	public Person() {
+		
+	}
+	
+	public Person(int age, String name) {
+		this.age = age;
+		this.name = name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int Age) {
+		this.age = age;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	protected void showAge() {
+		System.out.println("Age is " + age);
+	}
+}
+
+----------------------------------------------------------
+
+package com.pp2;
+
+public class Student extends Person{
+private String nameOfUniversity;
+
+	public Student(int age, String name, String nameOfUniversity) {
+		super(age,name);
+		this.nameOfUniversity = nameOfUniversity;
+	}
+	
+	public void showStudent() {
+		System.out.println("Student name: " + name);
+		System.out.println("Age: " + age);
+		System.out.println("University: " + nameOfUniversity);
+	}
+	
+	public void showAge() {
+		super.showAge();
+	}
+}
+-------------------------------------------------------------
+
+package com.pp2;
+
+public class App {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Student s = new Student (26,"Kevin","MIT");
+		s.showAge();
+	}
+
+}
